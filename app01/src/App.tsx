@@ -8,12 +8,14 @@
  *      font-size -> fontSize
  * 
  */
+
 function App() {
+  const msg = "Salam Donya";
 
   return (
     <>
       <div className="container">
-        <h1>Salam</h1>
+        <h1>{msg}</h1>
       </div>
     </>
   )
