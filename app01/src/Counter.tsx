@@ -16,7 +16,7 @@ export function Counter({ init, step }: Props) {
         setCounter(counter - step);
     }
 
-    function reset() {
+    const reset = () => {
         setCounter(init);
     }
 
@@ -26,6 +26,9 @@ export function Counter({ init, step }: Props) {
         <br />
         <button onClick={inc}>➕</button>&nbsp;
         <button onClick={dec}>➖</button>&nbsp;
+        <button onClick={() => {
+            setCounter(init);
+        }} >Rest</button>
         <button onClick={reset} >Rest</button>
     </div>;
 }
