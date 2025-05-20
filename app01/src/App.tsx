@@ -14,9 +14,10 @@ import { useState } from "react";
 
 function App() {
   console.log("App...")
-  const msg = "Salam Donya";
+  let msg = "Salam Donya";
 
   const [counter, setCounter] = useState(42);
+  const [show, setShow] = useState(true);
 
   function inc() {
     console.log('current:', counter)
@@ -30,14 +31,26 @@ function App() {
     console.log(counter)
   }
 
+  function toggleShow() {
+    console.log(show)
+    msg = "xyz"
+    setShow(!show);
+  }
+
+  //virtual dom
   return (
     <>
       <div className="container">
         <h1>{msg}</h1>
-        {counter}
-        <br />
-        <button onClick={inc}>➕</button>&nbsp;
-        <button onClick={dec}>➖</button>
+        <hr />
+        <button onClick={toggleShow}>toggle</button>
+        {show && <div >
+          <hr />
+          {counter}
+          <br />
+          <button onClick={inc}>➕</button>&nbsp;
+          <button onClick={dec}>➖</button>
+        </div>}
       </div>
     </>
   )
