@@ -16,14 +16,7 @@ function App() {
   console.log("App...")
   const msg = "Salam Donya";
 
-  //[number, React.Dispatch<React.SetStateAction<number>>]
   const [counter, setCounter] = useState(42);
-  // const counter = state[0];
-  // const setCounter = state[1];
-
-
-
-
 
   function inc() {
     console.log('current:', counter)
