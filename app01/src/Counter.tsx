@@ -7,13 +7,16 @@ export interface Props {
 }
 
 export function Counter(props: Props) {
-    const [counter, setCounter] = useState(props.init);
+    const step = props.step;
+    const init = props.init;
+
+    const [counter, setCounter] = useState(init);
     function inc() {
-        setCounter(counter + props.step);
+        setCounter(counter + step);
     }
 
     function dec() {
-        setCounter(counter - props.step);
+        setCounter(counter - step);
     }
 
     return <div>
