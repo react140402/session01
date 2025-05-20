@@ -6,10 +6,7 @@ export interface Props {
     step: number;
 }
 
-export function Counter(props: Props) {
-    const step = props.step;
-    const init = props.init;
-
+export function Counter({ init, step }: Props) {
     const [counter, setCounter] = useState(init);
     function inc() {
         setCounter(counter + step);
@@ -24,6 +21,6 @@ export function Counter(props: Props) {
         {counter}
         <br />
         <button onClick={inc}>➕</button>&nbsp;
-        <button onClick={dec}>➖</button>
+        <button onClick={dec}>➖</button>&nbsp;
     </div>;
 }
