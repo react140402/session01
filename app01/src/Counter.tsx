@@ -16,12 +16,16 @@ export function Counter({ init, step }: Props) {
         setCounter(counter - step);
     }
 
+    function reset() {
+        setCounter(init);
+    }
+
     return <div>
         <hr />
         {counter}
         <br />
         <button onClick={inc}>➕</button>&nbsp;
         <button onClick={dec}>➖</button>&nbsp;
-        <button >Rest</button>
+        <button onClick={reset} >Rest</button>
     </div>;
 }
