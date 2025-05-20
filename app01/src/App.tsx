@@ -11,6 +11,7 @@
 
 //use* - hook
 import { useState } from "react";
+import { Counter } from "./Counter";
 
 function App() {
   console.log("App...")
@@ -30,35 +31,14 @@ function App() {
         <h1>{msg}</h1>
         <hr />
         <button onClick={toggleShow}>toggle</button>
-        {show && <Counter />}
-        <Counter />
-        <Counter />
-        <Counter />
+        {show && <Counter init={42} step={1} />}
+        <Counter init={0} step={1} />
+        <Counter init={0} step={10} />
+        <Counter init={100} step={50} />
 
       </div>
     </>
   )
-}
-
-
-//PascalCase
-function Counter() {
-  const [counter, setCounter] = useState(42);
-  function inc() {
-    setCounter(counter + 1);
-  }
-
-  function dec() {
-    setCounter(counter - 1);
-  }
-
-  return <div >
-    <hr />
-    {counter}
-    <br />
-    <button onClick={inc}>➕</button>&nbsp;
-    <button onClick={dec}>➖</button>
-  </div>
 }
 
 
