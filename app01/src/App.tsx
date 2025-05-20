@@ -17,27 +17,29 @@ function App() {
   const msg = "Salam Donya";
 
   //[number, React.Dispatch<React.SetStateAction<number>>]
-  const counter = useState(0)
+  const state = useState(42);
+  const counter = state[0];
+  const setCounter = state[1];
 
 
 
   function inc() {
-    console.log('current:', counter[0])
-    counter[1](counter[0] + 1);
-    console.log(counter[0])
+    console.log('current:', counter)
+    setCounter(counter + 1);
+    console.log(counter)
   }
 
   function dec() {
-    console.log('current:', counter[0])
-    counter[1](counter[0] - 1);
-    console.log(counter[0])
+    console.log('current:', counter)
+    setCounter(counter - 1);
+    console.log(counter)
   }
 
   return (
     <>
       <div className="container">
         <h1>{msg}</h1>
-        {counter[0]}
+        {counter}
         <br />
         <button onClick={inc}>➕</button>&nbsp;
         <button onClick={dec}>➖</button>
