@@ -15,21 +15,7 @@ import { useState } from "react";
 function App() {
   console.log("App...")
   let msg = "Salam Donya";
-
-  const [counter, setCounter] = useState(42);
   const [show, setShow] = useState(true);
-
-  function inc() {
-    console.log('current:', counter)
-    setCounter(counter + 1);
-    console.log(counter)
-  }
-
-  function dec() {
-    console.log('current:', counter)
-    setCounter(counter - 1);
-    console.log(counter)
-  }
 
   function toggleShow() {
     console.log(show)
@@ -44,17 +30,37 @@ function App() {
         <h1>{msg}</h1>
         <hr />
         <button onClick={toggleShow}>toggle</button>
-        {show && <div >
-          <hr />
-          {counter}
-          <br />
-          <button onClick={inc}>➕</button>&nbsp;
-          <button onClick={dec}>➖</button>
-        </div>}
+        {show && <Counter />}
+        <Counter />
+        <Counter />
+        <Counter />
+
       </div>
     </>
   )
 }
+
+
+//PascalCase
+function Counter() {
+  const [counter, setCounter] = useState(42);
+  function inc() {
+    setCounter(counter + 1);
+  }
+
+  function dec() {
+    setCounter(counter - 1);
+  }
+
+  return <div >
+    <hr />
+    {counter}
+    <br />
+    <button onClick={inc}>➕</button>&nbsp;
+    <button onClick={dec}>➖</button>
+  </div>
+}
+
 
 export default App
 
