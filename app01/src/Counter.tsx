@@ -22,5 +22,6 @@ export function Counter({ init, step }: Props) {
         <br />
         <button onClick={inc}>➕</button>&nbsp;
         <button onClick={dec}>➖</button>&nbsp;
+        <button >Rest</button>
     </div>;
 }
