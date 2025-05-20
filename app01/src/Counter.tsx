@@ -16,6 +16,7 @@ export function Counter({ init, step }: Props) {
         setCounter(counter - step);
     }
 
+    //lambda expression
     const reset = () => {
         setCounter(init);
     }
